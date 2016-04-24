@@ -4,6 +4,7 @@ setTimeout(function(){
         var r = confirm("Like Images on this Page");
 
         if (r == true) {
+            pageScroll();
             setInterval(function(){
                 txt = "You pressed OK!";
 
@@ -20,3 +21,8 @@ setTimeout(function(){
         }
     }
 }, 5000);
+
+function pageScroll() {
+    window.scrollBy(0,10);
+    scrolldelay = setTimeout(pageScroll,20);
+}

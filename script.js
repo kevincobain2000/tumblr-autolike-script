@@ -8,13 +8,11 @@ setTimeout(function(){
             setInterval(function(){
                 txt = "You pressed OK!";
 
-                    elems = document.getElementsByClassName('like')
+                    elems = document.querySelectorAll('.like:not(.liked)')
                     var counter = 0;
                     for(var i = 0; i< elems.length; i++) {
-                        if ( !elems[i].classList.contains("liked") ){
-                          counter++;
-                          elems[i].click();
-                        }
+                        counter++;
+                        elems[i].click();
                     }
                     console.log('liked:' + counter)
             }, 5000);
@@ -24,5 +22,5 @@ setTimeout(function(){
 
 function pageScroll() {
     window.scrollBy(0,10);
-    scrolldelay = setTimeout(pageScroll,20);
+    scrolldelay = setTimeout(pageScroll,50);
 }
